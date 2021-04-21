@@ -1,0 +1,19 @@
+version: "3"
+services:
+  database:
+      image: mysql:8
+      ports: 
+        - "3306:3306"
+        - "33060:33060"
+      environment:
+        MYSQL_ROOT_PASSWORD: "root"
+        MYSQL_PASSWORD: "root"
+        MYSQL_DATABASE: "bootdb"
+      volumes:
+        - F:\springtoolsuite\ws-sts\stock-quote-manager:/var/www
+      networks: 
+        - production-network
+ 
+networks:
+  production-network:
+      driver: bridge
